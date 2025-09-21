@@ -1,0 +1,340 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* Game area */
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Score board */
+.score-board {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.player-score, .computer-score {
+    flex: 1;
+}
+
+.player-score h3, .computer-score h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.player-score span, .computer-score span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #764ba2;
+    padding: 0 20px;
+}
+
+/* Choice display */
+.choice-display {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.choice-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.player-choice, .computer-choice {
+    flex: 1;
+}
+
+.player-choice h4, .computer-choice h4 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.choice-emoji {
+    font-size: 4rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 50%;
+    width: 100px;
+    margin: 0 auto;
+    border: 3px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+/* Result area */
+.result-area {
+    text-align: center;
+    padding: 20px;
+}
+
+.result-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.result-message.win {
+    background: rgba(40, 167, 69, 0.8);
+}
+
+.result-message.lose {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+.result-message.tie {
+    background: rgba(255, 193, 7, 0.8);
+    color: #333;
+}
+
+/* Choice buttons */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.choice-btn {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.choice-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: #667eea;
+}
+
+.choice-btn:active {
+    transform: translateY(-2px);
+}
+
+.choice-btn.selected {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.choice-btn .emoji {
+    font-size: 3rem;
+}
+
+.choice-btn .text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.control-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn.quit {
+    color: #dc3545;
+}
+
+.control-btn.quit:hover {
+    border-color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+}
+
+/* Instructions */
+.instructions {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instructions p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.instructions ul {
+    list-style: none;
+    color: #666;
+}
+
+.instructions li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.instructions li:before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .choices {
+        gap: 15px;
+    }
+    
+    .choice-btn {
+        min-width: 100px;
+        padding: 15px;
+    }
+    
+    .choice-btn .emoji {
+        font-size: 2.5rem;
+    }
+    
+    .choice-emoji {
+        font-size: 3rem;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .score-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .vs {
+        order: 2;
+        padding: 10px 0;
+    }
+    
+    .choice-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .choice-btn .text {
+        font-size: 1rem;
+    }
+    
+    .result-message {
+        font-size: 1.3rem;
+        padding: 12px 20px;
+    }
+}
