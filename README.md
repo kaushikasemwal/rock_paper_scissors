@@ -58,4 +58,4 @@ This project is distributed under the MIT License. See `LICENSE` file for more i
 ## Acknowledgments
 
 * Inspiration from classic arcade games.
-* Any tutorials or resources that helped you.
+* Special Thanks to codedex.
